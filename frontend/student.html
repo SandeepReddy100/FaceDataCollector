@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Registration</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Face Registration for Attendance</h1>
+        <p>Please position your face inside the oval. Ensure you are in a well-lit room and remove any glasses or hats.
+        </p>
+
+        <div class="video-container">
+            <video id="video" width="640" height="480" autoplay muted></video>
+            <canvas id="canvas" width="640px" height="480px"></canvas>
+            <div id="overlay" class="overlay"></div>
+        </div>
+
+        <p id="statusText">Waiting for camera...</p>
+        <p id="confidenceText"></p>
+        <p id="similarityText"></p>
+
+        <button id="startButton">Start Registration</button>
+        <button id="testButton" style="display: none;">Test Recognition</button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
